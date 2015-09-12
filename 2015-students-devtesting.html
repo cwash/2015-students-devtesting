@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Title</title>
+    <title>10 Things CompSci Majors Should Know About Developer Testing</title>
     <meta charset="utf-8">
     <style>
-      @import url(https://fonts.googleapis.com/css?family=Nunito|Bangers|Courgette|Source+Code+Pro);
+      @import url(https://fonts.googleapis.com/css?family=Nunito|Bangers|Courgette|Permanent+Marker|Source+Code+Pro);
 
       body {
         font-family: 'Nunito', sans-serif;
@@ -14,24 +14,32 @@
         font-weight: 400;
         margin-bottom: 0;
       }
-      h4, h5, h6 {
-        font-family: 'Courgette', cursive;
-        color: rgb(38, 114, 249);
-      }
       blockquote {
-        color: rgb(38, 249, 114);
-        font-family: 'Courgette', cursive;
+        font-family: 'Permanent Marker', cursive;
+        background: transparent;
+        background: rgba(200, 200, 200, 0.5);
+        color: #333;
       }
-      .alt-color-1 {
-        color: rgb(38, 249, 114); 
+
+      .hilite {
+        color: rgb(38, 114, 249); 
+        text-shadow: -1px -1px 1px #000,
+                     1px -1px 1px #000,
+                     -1px 1px 1px #000,
+                     1px 1px 1px #000;
       }
-      .alt-color-2 {
-        color: rgb(38, 114, 249);
+      .hilite h1, h2, h3 {
+        text-shadow: 0 0 20px rgb(38, 114, 249);
       }
 
       .remark-slide-content h1 { font-size: 3em; }
       .remark-slide-content h2 { font-size: 2em; }
       .remark-slide-content h3 { font-size: 1.6em; }
+      .footnote-asterisk {
+        position: relative; 
+        top: -0.5em; 
+        font-size: 80%;
+      }
       .footnote {
         position: absolute;
         bottom: 3em;
@@ -40,13 +48,17 @@
         position: absolute;
         bottom: 2em;
       }
+
       li p { line-height: 1.25em; }
       .red { color: #fa0000; }
       .large { font-size: 2em; }
       a, a > code {
-        color: rgb(249, 38, 114);
-        font-family: 'Courgette', cursive;
-        text-decoration: none;
+        color: rgb(38, 114, 249);
+        text-shadow: -1px -1px 1px #000,
+                     1px -1px 1px #000,
+                     -1px 1px 1px #000,
+                     1px 1px 1px #000;
+        text-decoration: underline;
       }
       code {
         background: #e7e8e2;
@@ -72,18 +84,44 @@
         font-size: 0.9em;
         padding: 15px;
       }
-      .inverse {
+      .question {
         background: #272822;
         color: #777872;
-        text-shadow: 0 0 20px #333;
       }
-      .inverse h1, .inverse h2 {
+      .question h1, .question h2 {
         color: #f3f3f3;
         line-height: 0.8em;
+        text-shadow: 0 0 20px rgb(249, 38, 115);
+      }
+      .question a, a > code {
+        color: rgb(249, 38, 115);
+        text-shadow: 0 0 20px rgb(249, 38, 115);
+      }
+      .question .hilite {
+        color: rgb(249, 38, 115);
+        text-shadow: 0 0 25px rgb(255, 215, 0);
+      }
+
+      .takeaway {
+        background: #272822;
+        color: #777872;
+      }
+      .takeaway h1, .takeaway h2 {
+        color: #f3f3f3;
+        line-height: 0.8em;
+        text-shadow: 0 0 20px rgb(38, 249, 114);
+      }
+      .takeaway a, a > code {
+        color: rgb(38, 249, 114);
+        text-shadow: 0 0 20px rgb(38, 249, 114);
+      }
+      .takeaway .hilite {
+        color: rgb(38, 249, 114);
+        text-shadow: 0 0 25px rgb(255, 215, 0);
       }
 
       /* Slide-specific styling */
-      #slide-inverse .footnote {
+      #slide-question .footnote {
         bottom: 12px;
         left: 20px;
       }
@@ -133,6 +171,11 @@
         padding-top: 1em;
       }
 
+      .transparent-textbox {
+        background: transparent;
+        background: rgba(255, 255, 255, 0.5);
+      }
+
     </style>
   </head>
   <body>
@@ -140,68 +183,233 @@
 
 name: title
 layout: true
-class: center, middle, inverse
+class: center, middle, question
 ---
-#10 Things .alt-color-2[CompSci Majors] Should Know About .alt-color-1[Developer Testing]
-Answers to the Most Frequently Asked Questions
+#10 Things CompSci Majors Should Know About Developer Testing
+.hilite[The Important Bits, and Where To Go To Learn More]
 .footnote[By [Chris Wash](https://github.com/cwash)]
 .footnote2[From [CapTech](http://www.captechconsulting.com)]
 ---
-## What's meant by .alt-color-1[developer testing]?
+name: question
+layout: true
+class: center,middle,question
 ---
-## Where did this idea of developer testing come from?
+name: answer-top
+layout: true
+class: left,top
 ---
-## How am I going to test the code in my test code?
+name: takeaway
+layout: true
+class: center,middle,takeaway
 ---
-## Why is it worth my time and attention?
+name: answer-mid
+layout: true
+class: center,middle
 ---
-## How can I get started?
+layout: false
+template: takeaway
+# 1. You're likely to be asked about it in a job interview.
 ---
-## What goes into a unit test?
+template: answer-mid
+# Important .hilite[core competency] for junior developers
 ---
-## How should I structure my tests?
+template: question
+# Is it being taught in schools yet? Internships?
 ---
-## When should I write tests?
+template: answer-mid
+# For the last 10 years, typically learned on the job
 ---
-## How does it relate to other professional tools you use?
+# Orgs rely on .hilite[automated testing] to be able to make changes to their systems .hilite[rapidly]
 ---
-## What are some tips that will help?
+template: question
+# Ask your tech mentors: .hilite[Why] does your company value .hilite[automated testing]?
 ---
-## Where can I go to learn more?
+# A. Decrease .hilite[time to market]? (expand customers/revenue)
 ---
-## What is it and why should I be using it?
+# B. Lower the .hilite[cost of change]? (reduce cost)
+---
+# C. Increase .hilite[overall quality]? (mitigate risk)
+---
+template: answer-mid
+# Automated tests form .hilite[quality gates] or .hilite[safety gates] in a release process
+---
+template: takeaway
+# 2. Remember the addage, "defense wins championships"
+---
+template: answer-mid
+# Your .hilite[mainline] code's purpose is to .hilite[deliver features] (behavior)
+---
+# Like putting points on the board
+--
+... .hilite[OFFENSE]
+---
+# Your .hilite[test] code's purpose is to .hilite[catch bugs]
+---
+# Stop unwanted behaviors from happening in .hilite[production]
+--
+... .hilite[DEFENSE]
+---
+# Our focus during the Hackathon may be like in Fantasy Football - on .hilite[OFFENSE]
+---
+# But when building your "real" idea out, don't forget your .hilite["D"]
+---
+template: takeaway
+# 3. It takes "Minutes to learn... a lifetime to master"
+---
+# Simple concepts, but takes .hilite[experience] to master
+---
+# Combines .hilite[technical], .hilite[design], and .hilite[economic] decision making
+---
+# Is very challenging and can be very fun!
+---
+# The earlier your start the better
+---
+# 4. Understand a Unit Test Framework, e.g. .hilite[JUnit]
+---
+# There are 4 main concepts that span across all languages/frameworks
+---
+# A. .hilite[Test Case]
+---
+## Skeleton that holds your setup, test methods and teardown code
+---
+# B. .hilite[Assertions]
+---
+## i. 1st Generation: For given inputs, do the .hilite[actual] outputs match my .hilite[expected] outputs?
+---
+## ii. 2nd Generation: If not, what was the .hilite[delta]?
+---
+# C. .hilite[Batching]
+---
+## (Run a bunch all at once)
+---
+# D. .hilite[Report]
+---
+## Show me in a pretty way what happened (Pass/Fail/Error?)
+---
+template: takeaway
+# 5. Know what goes into a Unit Test
+---
+# A good test is ".hilite[ATRIP]"
+---
+## Automated
+## Thorough
+## Independent
+## Repeatable
+---
+# Use the .hilite[3A's] to remember how to structure your test
+---
+## Arrange
+## Act
+## Assert
+---
+# Let's check out an .hilite[example]...
+---
+# Strive to keep your tests .hilite[simple]!
+---
+# This can be difficult if your mainline code is not very .hilite[testable]
+---
+template: takeaway
+# 6. Design your mainline code for testability
+---
+# Pardon the hand waving for now
+---
+# This is a number of talks by itself
+---
+# Some good rules of thumb to get you started
+---
+# Understand ".hilite[Separation of Concerns]"
+---
+# Favor good .hilite[OO design] over procedural code
+---
+## Research ".hilite[SOLID]" principles
+---
+## In particular, the ".hilite[D]" - Dependency Inversion or AKA Inversion of Control
+---
+## "Program to an interface, not an implementation"
+---
+## Spring Framework, Google Guice Framework, etc.
+---
+## Pattern to minimize the setup code you write to initialize objects
+---
+## Framework manages instances and allows you to inject them
+---
+## Check out ".hilite[OO Design for Testability]" video in Resources
+---
+# Look into how to use .hilite[refactoring] to tease design patterns out of your trouble spots
+---
+template: takeaway
+# 7. Know that automated tests are .hilite[not] free
+---
+# Must be maintained .hilite[with] the code they are testing
+---
+## Cost over time - pay as your go instead of trying to pay all at once
+---
+# ".hilite[Test a little, code a little]"
+---
+# Some tests are more valuable than others
+---
+## The more complicated the mainline code, the more valuable the test
+---
+template: takeaway
+# 8. Writing tests firsts can help improve your design
+---
+# By getting you to think about how it will be used
+---
+# If you are struggling with designing a service interface, write tests first
+---
+# Red, Green, Refactor
+---
+# ".hilite[Test Driven Development]"
+---
+template: takeaway
+# 9. Know some common things to test
+---
+# .hilite[Happy Path]
+---
+## Define a few examples you expect to work
+---
+## Checkout *Specification By Example* for an interesting take on what evolved testing could be
+---
+# .hilite[Boundary Conditions]
+---
+## See the ".hilite[CORRECT]" chapter in *Pragmatic Unit Testing* for plenty of ideas
+---
+template: takeaway
+# 10. Continue learning!
+---
+template: answer-top
+# Some Key Resources
+ - [ *Pragmatic Unit Testing* by Andy Hunt et al](http://www.amazon.com/Pragmatic-Unit-Testing-Java-JUnit/dp/1941222595)
+ - [ *Test Driven* by Lasse Koskela](http://my.safaribooksonline.com/9781932394856)
+ - [ *Growing OO Software, Guided by Tests* by Steve Freeman and Nat Pryce](http://my.safaribooksonline.com/9780321574442)
+ - [ *Working Effectively with Legacy Code* by Michael Feathers](http://my.safaribooksonline.com/0131177052)
+ - [ *Specification By Example* by Gojko Adzic](http://specificationbyexample.com/)
+ - Blogs to check out: [Jay Fields](http://blog.jayfields.com/), [Andy Glover](http://thediscoblog.com/), [Nat Pryce](http://www.natpryce.com/)
+ - "[OO Design for Testability](http://www.youtube.com/watch?v=acjvKJiOvXw)" by Miskov Hevery
+ - "[Evil Unit Tests](http://www.javaranch.com/journal/200603/EvilUnitTests.html)" by Paul Wheaton
+ - "[Integration Tests Are A Scam](http://www.infoq.com/presentations/integration-tests-scam)" by J.B. Rainsberger
+ - "[The Economics of Software Design](https://www.youtube.com/watch?v=7HecgbghFTk)" by J.B. Rainsberger
+ - "[Test Driven Development and the Scientific Method](http://agile2003.agilealliance.org/files/P6Paper.pdf)" by Rick Mugridge
+ - "[TDD as if you Meant it](http://cumulative-hypotheses.org/2011/08/30/tdd-as-if-you-meant-it/)" exercise originally by Keith Braithwaite, also [workshopped](http://gojko.net/2009/08/02/tdd-as-if-you-meant-it-revisited/) by Gojko Adzic
 ---
 name: last-page
-template: inverse
+template: answer
 
-## Fin
+# The End
 
 Slideshow created using [remark](http://github.com/gnab/remark).
 
     </textarea>
-    <script src="https://gnab.github.io/remark/downloads/remark-latest.min.js">
-    </script>
+    <script src="http://gnab.github.io/remark/downloads/remark-latest.min.js"></script>
     <script>
       var hljs = remark.highlighter.engine;
     </script>
-    <script src="remark.language.js"></script>
+    <script src="http://gnab.github.io/remark/remark.language.js"></script>
     <script>
       var slideshow = remark.create({
           highlightStyle: 'monokai',
           highlightLanguage: 'remark'
         }) ;
-    </script>
-    <script>
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-44561333-1']);
-      _gaq.push(['_trackPageview']);
-
-      (function() {
-        var ga = document.createElement('script');
-        ga.src = 'https://ssl.google-analytics.com/ga.js';
-        var s = document.scripts[0];
-        s.parentNode.insertBefore(ga, s);
-      }());
     </script>
   </body>
 </html>
