@@ -225,29 +225,34 @@ template: question
 # Ask your tech mentors: .hilite[Why] does your company value .hilite[automated testing]?
 ---
 # A. Decrease .hilite[time to market]? (expand customers/revenue)
+## Confidence to release small features more quickly
 ---
-# B. Lower the .hilite[cost of change]? (reduce cost)
+# B. Lower the .hilite[cost of making a change]?
+## Tests serve as documentation
 ---
 # C. Increase .hilite[overall quality]? (mitigate risk)
+## Exercise or cover lines of code "continuously"
 ---
 template: answer-mid
 # Automated tests form .hilite[quality gates] or .hilite[safety gates] in a release process
 ---
 template: takeaway
-# 2. Remember the addage, "defense wins championships"
+# 2. Defense wins championships
 ---
 template: answer-mid
 # Your .hilite[mainline] code's purpose is to .hilite[deliver features] (behavior)
 ---
-# Like putting points on the board
---
-... .hilite[OFFENSE]
+background-image: url(https://simmqb.files.wordpress.com/2015/01/pats-colts-gronk-spike-sb.jpg)
+.transparent-textbox[
+# Like putting points on the board... .hilite[OFFENSE]
+]
 ---
 # Your .hilite[test] code's purpose is to .hilite[catch bugs]
 ---
-# Stop unwanted behaviors from happening in .hilite[production]
---
-... .hilite[DEFENSE]
+background-image: url(http://dvzyjrqhqfwpz.cloudfront.net/wp-content/uploads/2013/07/House.jpg)
+.transparent-textbox[
+# Prevent unwanted behaviors from happening... .hilite[DEFENSE]
+]
 ---
 # Our focus during the Hackathon may be like in Fantasy Football - on .hilite[OFFENSE]
 ---
@@ -264,7 +269,7 @@ template: takeaway
 ---
 # The earlier your start the better
 ---
-# 4. Understand a Unit Test Framework, e.g. .hilite[JUnit]
+# 4. Understand the pieces of Unit Test Frameworks, e.g. .hilite[JUnit]
 ---
 # There are 4 main concepts that span across all languages/frameworks
 ---
@@ -282,9 +287,12 @@ template: takeaway
 ---
 ## (Run a bunch all at once)
 ---
-# D. .hilite[Report]
+# D. .hilite[Reports]
 ---
-## Show me in a pretty way what happened (Pass/Fail/Error?)
+background-image: url(http://www.luv2code.com/wp-content/uploads/2011/01/junit_report_screenshot-1024x567.png)
+.transparent-textbox[
+## Show me what happened (Pass/Fail/Error?)
+]
 ---
 template: takeaway
 # 5. Know what goes into a Unit Test
@@ -306,7 +314,9 @@ template: takeaway
 ---
 # Strive to keep your tests .hilite[simple]!
 ---
-# This can be difficult if your mainline code is not very .hilite[testable]
+# This can be difficult if your mainline code is not very .hilite[testable] to begin with
+---
+# Or your test gets .hilite[too big]
 ---
 template: takeaway
 # 6. Design your mainline code for testability
@@ -375,7 +385,42 @@ template: takeaway
 ## See the ".hilite[CORRECT]" chapter in *Pragmatic Unit Testing* for plenty of ideas
 ---
 template: takeaway
-# 10. Continue learning!
+# 10. Know the answer to ".hilite[How Do I Test My Test Code?]"
+---
+background-image: url(http://cdn.meme.am/instances/500x/59236929.jpg)
+---
+template: answer-top
+background-image: url(http://www.prospectmagazine.co.uk/wp-content/uploads/2014/07/Daniel-Dennett.jpg?9d1dcd)
+.transparent-textbox[
+# This is what Dan Dennett calls a ".hilite[deepity]"
+]
+---
+# ".hilite[Love is just a word]"
+---
+template: question
+# On one level the statement is perfectly true 
+## ("love" is a word)
+---
+template: question
+# But the deeper meaning of the phrase is .hilite[false]
+---
+template: question
+# Love is many things — a feeling, an emotion, a condition — and .hilite[not simply a word].
+---
+# So how is ".hilite[How Do I Test My Test Code]?" a deepity?
+---
+# Supposes that you need another .hilite[level of testing] to verify
+---
+# Because .hilite[tests are coupled] to the code they're testing
+---
+# You can test your tests by .hilite[springing the trap]
+---
+# .hilite[Introduce a temporary bug] in your code and .hilite[make sure your test catches it]
+---
+name: last-page
+template: answer
+
+# The End
 ---
 template: answer-top
 # Some Key Resources
@@ -392,12 +437,7 @@ template: answer-top
  - "[Test Driven Development and the Scientific Method](http://agile2003.agilealliance.org/files/P6Paper.pdf)" by Rick Mugridge
  - "[TDD as if you Meant it](http://cumulative-hypotheses.org/2011/08/30/tdd-as-if-you-meant-it/)" exercise originally by Keith Braithwaite, also [workshopped](http://gojko.net/2009/08/02/tdd-as-if-you-meant-it-revisited/) by Gojko Adzic
 ---
-name: last-page
-template: answer
-
-# The End
-
-Slideshow created using [remark](http://github.com/gnab/remark).
+# Slideshow created using [remark](http://github.com/gnab/remark).
 
     </textarea>
     <script src="http://gnab.github.io/remark/downloads/remark-latest.min.js"></script>

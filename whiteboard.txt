@@ -1,0 +1,213 @@
+# Easiest way to do developer testing? 
+---
+# The .hilite[assert] keyword... FTW!
+---
+# But it's .hilite[unreliable]
+---
+# They can be .hilite[stripped out] with a recompile
+---
+# Or even worse, just .hilite[completely ignored] in the runtime
+---
+# Not to mention, it .hilite[clutters our code]!
+---
+# And we .hilite[don't have control] over when the assertions run
+---
+# They were .hilite[not designed] to support "testing"
+
+.footnote[rather, designed to support defensive coding]
+---
+# What if we write our own "framework"?
+---
+# What basic requirements do we have?
+---
+background-image: url(http://images2.houstonpress.com/imager/u/original/6391457/hoarding0106.jpg)
+.transparent-textbox[
+# A. asserts don't .hilite[clutter] our code
+]
+---
+# Instead, give them a respectable .hilite[place to live]
+---
+# Their own class maybe?
+.footnote[See also: [Separation of Concerns](https://en.wikipedia.org/wiki/Separation_of_concerns)]
+---
+# Also, a good place to put initialization, inputs and cleanup
+---
+# B. Can be .hilite[executed indepedently]
+---
+# Would run with a .hilite[different lifecycle] than our main code runs end-to-end
+---
+# After compilation, but before end-to-end
+---
+# With .hilite[minimal dependencies]
+---
+# C. Run multiple in a batch at once
+---
+# D. Produce a report to tell us the results
+---
+# Kent Beck wrote a framework just like this
+---
+# In .hilite[1997].footnote-asterisk[.red[*]]
+
+.footnote[
+.footnote-asterisk[.red[*]] - Actually, the concept is much older than that - originated in Smalltalk
+]
+---
+# Called the framework [JUnit](http://junit.org)
+---
+# Referred to the resulting test class as a [Unit Test](https://en.wikipedia.org/wiki/Unit_testing)
+---
+# Scientific Method
+---
+template: answer-top
+# What is assert really saying?
+--
+
+- Do my .hilite[observations] match my .hilite[expectations]? 
+--
+
+- `assertTrue(expr)`
+--
+
+- `assertEquals(actual, expected)`
+---
+# Developer Testing Workflow
+---
+# .hilite[Example]
+Let's see what this looks like in my IDE of choice, IntelliJ
+---
+template: answer-top
+# Developer Testing in a Nutshell
+--
+
+- [Separation of Concerns](https://en.wikipedia.org/wiki/Separation_of_concerns) : for defensive programming practices
+--
+
+- [Design by Contract](https://en.wikipedia.org/wiki/Design_by_contract) : Preconditions, Postconditions, Invariants
+--
+
+- [SOLID principles](https://en.wikipedia.org/wiki/SOLID_(object-oriented_design) : of OOAD
+--
+
+
+Particularly the [Dependency Inversion](https://en.wikipedia.org/wiki/Dependency_inversion_principle) principle
+> "Depend upon Abstractions. Do not depend upon concretions."
+    
+  or you might hear people say,
+> "Program to an interface, not an implementation"
+---
+template: takeaway
+# takeaway #1
+Unit testing frameworks are just [defensive programming](https://en.wikipedia.org/wiki/Defensive_programming) best practices "reimagined" in a library, e.g. -  .hilite[JUnit]
+---
+name: question-2
+template: question
+# 2. How am I going to test the code in my test code?
+---
+name: answer-2
+template: answer-mid
+background-image: url(https://c1.staticflickr.com/3/2116/2499825928_b3a86cc93b_b.jpg)
+.transparent-textbox[
+# "It's turtles all the way down".footnote-asterisk[*]
+]
+.footnote[
+.footnote-asterisk[*] - an [infinite regression?](https://en.wikipedia.org/wiki/Turtles_all_the_way_down)
+]
+---
+template: answer-top
+# Fear, Uncertainty, Doubt
+
+- The "But how do I test my tests?" question is a classic example of .hilite[FUD]
+--
+
+- Usually an invitation for the team to do some .hilite[navel gazing] instead of engage in a productive conversation
+--
+
+- You could write tests for your tests, and tests for those tests, and so on, but it would be .hilite[a profoundly hollow exercise].
+--
+
+- What Daniel Dennett calls a .hilite[deepity]
+--
+
+> Something that sounds profound but is instead intellectually hollow. 
+
+--
+- Consider the phrase
+> "Love is just a word." 
+
+--
+
+.takeaway[
+On one level the statement is perfectly true (i.e., "love" is a word), but the deeper meaning of the phrase is false; love is many things — a feeling, an emotion, a condition — and .hilite[not simply a word].
+]
+
+---
+template: answer-top
+# A somewhat satisfying answer
+
+--
+- .hilite[KISS] : Keep your tests small, simple and focused so a test of a test is not a legit concern
+--
+
+- This is a good rule of thumb, but in reality sometimes the test has to be big
+---
+template: answer-top
+# A better question
+A more pragmatic question is "How do I know if my tests work correctly?"
+--
+
+> "Testing shows the presence, not the absence, of bugs" -Dijsktra
+
+--
+
+A successful test is one that can reliably demonstrate a .hilite[failure or error] in the system.
+- The goal of the code under test is to reliably produce the correct output
+- The goal of the test is to show a scenario where the system will not produce the correct output
+---
+template: answer-top
+# A much more satisfying answer
+
+Exploit the .hilite[conceptual coupling] of test code with the main code it's testing
+--
+
+- If writing tests first, just watch your tests fail as you are writing them.  Checks for a false positive.
+--
+
+- Otherwise, introduce an intentional error into the unit of code, and if the test doesn't "catch" it, the test is broken!
+--
+
+
+.takeaway[
+.hilite[Takeaway #2]: A simple technique solves the "But how do I test my tests?" problem - break the code under test and make sure the test catches it.  Also referred to as .hilite[Springing the trap]
+]
+---
+name: question-3
+template: question
+# 3. Why is it worth my time and attention?
+---
+name: question-4
+template: question
+# 4. How can I get started?
+---
+name: question-5
+template: question
+# 5. What goes into a unit test?
+---
+name: question-6
+template: question
+# 6. How should I structure my tests?
+---
+name: question-7
+template: question
+# 7. When should I write tests?
+---
+name: question-8
+template: question
+# 8. How does it relate to other professional tools you use?
+---
+name: question-9
+template: question
+# 9. What are some tips that will help?
+---
+name: question-10
+template: question
+# 10. Where can I go to learn more?
