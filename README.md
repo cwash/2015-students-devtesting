@@ -26,5 +26,5 @@ Here are the resource links found at the end of the talk:
 
 ---
 
-The slides was developed using [remarkjs](http://remarkjs.com/).
+The slides were developed using [remarkjs](http://remarkjs.com/).
 Images belong to their respective owners, found using Google Image Search.
